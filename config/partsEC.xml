@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel"  parallel="tests" thread-count="4" >
+
+    <test name="ReceivePart">
+       <parameter name="config" value="receivepartsEC.properties"/>
+       <parameter name="environment" value="EC"/>
+       <classes>
+           <class name="tests.parts.ReceiveParts"/>
+       </classes>
+   </test>
+
+    <test name="CounterSale">
+        <parameter name="config" value="countersaleEC.properties"/>
+        <parameter name="environment" value="EC"/>
+        <classes>
+            <class name="tests.parts.CounterSale"/>
+        </classes>
+    </test>
+
+    <test name="ServiceManagerWoLabour">
+        <parameter name="config" value="servicemanagerwolaborEC.properties"/>
+        <parameter name="environment" value="EC"/>
+        <classes>
+            <class name="tests.service.ServiceManagerWoLabor"/>
+        </classes>
+    </test>
+
+    <test name="ServiceManagerJournalize">
+        <parameter name="config" value="servicemanagerjournalizeEC.properties"/>
+        <parameter name="environment" value="EC"/>
+        <classes>
+            <class name="tests.techRo.ServiceManagerJournalize"/>
+        </classes>
+    </test>
+
+</suite>

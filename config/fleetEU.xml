@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel"  parallel="tests" thread-count="4" >
+
+    <listeners>
+        <listener class-name="utils.TestListener"/>
+    </listeners>
+
+   <test name="CreateUnit">
+        <parameter name="config" value="createunitEU.properties"/>
+        <parameter name="environment" value="EU"/>
+        <classes>
+            <class name="tests.fleet.CreateUnit"/>
+        </classes>
+    </test>
+
+    <test name="CreatePart">
+           <parameter name="config" value="createpartEU.properties"/>
+           <parameter name="environment" value="EU"/>
+           <classes>
+               <class name="tests.parts.CreatePart"/>
+           </classes>
+       </test>
+
+    <test name="SpotOrder">
+        <parameter name="config" value="spotorderpartsEU.properties"/>
+        <parameter name="environment" value="EU"/>
+        <classes>
+            <class name="tests.parts.Spotorderparts"/>
+        </classes>
+    </test>
+
+    <test name="TechWoLabour">
+        <parameter name="config" value="techwolaborEU.properties"/>
+        <parameter name="environment" value="EU"/>
+        <classes>
+            <class name="tests.tech.TechWoLabor"/>
+        </classes>
+    </test>
+
+
+
+
+   </suite>

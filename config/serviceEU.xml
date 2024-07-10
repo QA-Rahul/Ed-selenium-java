@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel"  parallel="tests" thread-count="4" >
+
+
+
+    <test name="ServiceWoLabour">
+        <parameter name="config" value="servicemanagerwolaborEU.properties"/>
+        <parameter name="environment" value="EU"/>
+        <classes>
+            <class name="tests.service.ServiceManagerWoLabor"/>
+        </classes>
+    </test>
+
+
+    <test name ="Invoice">
+               <parameter name="config" value="servicemanagerinvoiceEU.properties"/>
+               <parameter name="environment" value="EU"/>
+               <classes>
+                   <class name="tests.techRo.ServiceManagerInvoice"/>
+               </classes>
+    </test>
+
+    <test name="SubmitAnEstimete">
+        <parameter name="config" value="submitanestimateservicemanagerEU.properties"/>
+        <parameter name="environment" value="EU"/>
+        <classes>
+            <class name="tests.Estimate.SubmitAnEstimateServiceManager"/>
+        </classes>
+    </test>
+
+
+
+    <!--          <test name="AddFabricated">
+                <parameter name="config" value=""/>
+                <parameter name="environment" value="EU"/>
+                <classes>
+                    <class name="tests.parts.AddaFabricatedPartToaClosedWorkorder"/>
+                </classes>
+            </test>    -->
+</suite>

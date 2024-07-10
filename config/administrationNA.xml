@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel"  parallel="tests" thread-count="4" >
+
+    <listeners>
+        <listener class-name="utils.TestListener"/>
+    </listeners>
+
+
+    <test name="CreateUnit">
+        <parameter name="config" value="createunitNA.properties"/>
+        <parameter name="environment" value="NA"/>
+        <classes>
+            <class name="tests.fleet.CreateUnit"/>
+        </classes>
+    </test>
+
+    <test name="CreatePart">
+        <parameter name="config" value="createpartNA.properties"/>
+        <parameter name="environment" value="NA"/>
+        <classes>
+            <class name="tests.parts.CreatePart"/>
+        </classes>
+    </test>
+
+    <test name="CreateVendor">
+        <parameter name="config" value="createvendorNA.properties"/>
+        <parameter name="environment" value="NA"/>
+        <classes>
+            <class name="tests.administration.CreateVendor"/>
+        </classes>
+    </test>
+
+    <test name="ServicemanagerWoLabour">
+        <parameter name="config" value="servicemanagerwolaborNA.properties"/>
+        <parameter name="environment" value="NA"/>
+        <classes>
+            <class name="tests.service.ServiceManagerWoLabor"/>
+        </classes>
+    </test>
+
+</suite>

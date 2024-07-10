@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel"  parallel="tests" thread-count="4" >
+
+    <listeners>
+        <listener class-name="utils.TestListener"/>
+    </listeners>
+
+    <test name="Customer" >
+        <parameter name="config" value="createcustomerEC.properties"/>
+        <parameter name="environment" value="EC"/>
+        <classes>
+            <class name="tests.administration.CreateCustomer"/>
+        </classes>
+    </test>
+
+   <test name="CreateUnit">
+        <parameter name="config" value="createunitEC.properties"/>
+        <parameter name="environment" value="EC"/>
+        <classes>
+            <class name="tests.fleet.CreateUnit"/>
+        </classes>
+    </test>
+
+
+       <test name="Vendor">
+       <parameter name="config" value="createvendorEC.properties"/>
+       <parameter name="environment" value="EC"/>
+       <classes>
+           <class name="tests.administration.CreateVendor"/>
+       </classes>
+   </test>
+
+
+    <test name="CreatePart">
+          <parameter name="config" value="createpartEC.properties"/>
+          <parameter name="environment" value="EC"/>
+          <classes>
+              <class name="tests.parts.CreatePart"/>
+          </classes>
+      </test>
+
+
+
+</suite>
